@@ -1,0 +1,26 @@
+.rating {
+  position: relative;
+  display: inline-block;
+  font-size: 14px;
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
+.rating__stars {
+  display: block;
+  font-weight: 900;
+}
+
+.rating__stars--base {
+  color: #e5e7eb;
+}
+
+.rating__stars--fill {
+  color: #f59e0b;
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
