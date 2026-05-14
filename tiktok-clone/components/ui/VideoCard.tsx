@@ -3,7 +3,13 @@
 import { useState } from "react";
 import { FaHeart } from "react-icons/fa";
 
-export default function VideoCard({ post }) {
+type VideoPost = {
+  username: string;
+  caption: string;
+  likes: number;
+};
+
+export default function VideoCard({ post }: { post: VideoPost }) {
   const [liked, setLiked] = useState(false);
 
   const toggleLike = () => {
