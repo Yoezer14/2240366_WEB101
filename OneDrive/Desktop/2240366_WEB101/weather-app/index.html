@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weather API Dashboard</title>
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+background:#f4f4f4;
+margin:0;
+padding:0;
+}
+
+.container{
+width:900px;
+margin:auto;
+margin-top:40px;
+background:white;
+padding:20px;
+border-radius:8px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+.tabs{
+display:flex;
+border-bottom:2px solid #ddd;
+}
+
+.tab{
+padding:12px 20px;
+cursor:pointer;
+border:none;
+background:none;
+font-weight:bold;
+}
+
+.tab.active{
+border-bottom:3px solid #007bff;
+color:#007bff;
+}
+
+.tab-content{
+display:none;
+padding:20px 0;
+}
+
+.tab-content.active{
+display:block;
+}
+
+input, textarea{
+width:100%;
+padding:8px;
+margin-top:6px;
+margin-bottom:12px;
+border:1px solid #ccc;
+border-radius:4px;
+}
+
+button{
+padding:10px 15px;
+background:#007bff;
+color:white;
+border:none;
+border-radius:4px;
+cursor:pointer;
+}
+
+button:hover{
+background:#0056b3;
+}
+
+.location-card{
+border:1px solid #ddd;
+padding:10px;
+margin-top:10px;
+border-radius:4px;
+}
+
+.delete-btn{
+background:red;
+}
+
+.edit-btn{
+background:orange;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Weather REST API Dashboard</h2>
+
+<div class="tabs">
+<button class="tab active" onclick="openTab('weather')">GET Weather</button>
+<button class="tab" onclick="openTab('save')">POST Location</button>
+<button class="tab" onclick="openTab('saved')">Saved Locations</button>
+</div>
+
+
+<!-- GET WEATHER -->
+
+<div id="weather" class="tab-content active">
+
+<h3>Get Weather</h3>
+
+<input id="cityInput" placeholder="Enter city name">
+
+<button onclick="getWeather()">Get Weather</button>
+
+<div id="weatherResult"></div>
+
+</div>
+
+
+<!-- POST LOCATION -->
+
+<div id="save" class="tab-content">
+
+<h3>Save Location</h3>
+
+<input id="locName" placeholder="Location Name">
+
+<input id="locCity" placeholder="City">
+
+<input id="locCountry" placeholder="Country">
+
+<textarea id="locNotes" placeholder="Notes"></textarea>
+
+<button onclick="saveLocation()">Save Location</button>
+
+</div>
+
+
+<!-- SAVED LOCATIONS -->
+
+<div id="saved" class="tab-content">
+
+<h3>Saved Locations</h3>
+
+<div id="locationsList"></div>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
